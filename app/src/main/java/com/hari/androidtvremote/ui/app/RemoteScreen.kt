@@ -39,7 +39,6 @@ import androidx.compose.material.icons.automirrored.filled.ArrowForwardIos
 import androidx.compose.material.icons.automirrored.filled.KeyboardBackspace
 import androidx.compose.material.icons.automirrored.filled.VolumeMute
 import androidx.compose.material.icons.filled.Add
-import androidx.compose.material.icons.filled.Apps
 import androidx.compose.material.icons.filled.ArrowBackIosNew
 
 import androidx.compose.material.icons.filled.FastForward
@@ -171,7 +170,7 @@ fun RemoteScreen(
     }
     var showKeyboardDialog by rememberSaveable { mutableStateOf(false) }
     val primaryPadMode = defaultPadMode.primaryMode()
-    val isNumberPadVisible = activePadMode == RemotePadMode.NumberPad
+    val isNumberPadVisible = activePadMode == RemotePadMode.DPad
 
     fun handleKeyboardOpen() {
         if (isConnected) {
@@ -701,13 +700,13 @@ private fun RemoteSwitcherBubble(
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             Icon(
-                imageVector = if (checked) Icons.Filled.Apps else primaryPadMode.icon,
+                imageVector = if (checked) RemotePadMode.DPad.icon else primaryPadMode.icon,
                 contentDescription = "Switch remote pad",
                 modifier = Modifier.size(iconSize)
             )
             Text(
                 text = if (checked) {
-                    "123"
+                    "D-pad"
                 } else if (primaryPadMode == RemotePadMode.Touchpad) {
                     "Touch"
                 } else {
