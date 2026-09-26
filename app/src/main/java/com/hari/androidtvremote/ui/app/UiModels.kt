@@ -83,3 +83,6 @@ fun RemotePadMode.primaryMode(): RemotePadMode = when (this) {
 
 fun RemotePadMode.toggleNumberPad(primaryMode: RemotePadMode): RemotePadMode =
     if (this == RemotePadMode.NumberPad) primaryMode.primaryMode() else RemotePadMode.NumberPad
+
+fun RemotePadMode.toggleDPad(primaryMode: RemotePadMode): RemotePadMode =
+    if (this == RemotePadMode.DPad) primaryMode.primaryMode() else RemotePadMode.DPad
