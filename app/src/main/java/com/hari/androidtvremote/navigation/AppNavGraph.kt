@@ -50,7 +50,7 @@ import com.hari.androidtvremote.ui.app.queryPhotosInAlbum
 import com.hari.androidtvremote.ui.app.resolveRemoteShortcutApps
 import com.hari.androidtvremote.utils.Constant
 import com.hari.androidtvremote.androidLib.remote.Remotemessage
-import com.hari.androidtvremote.ui.app.toggleNumberPad
+import com.hari.androidtvremote.ui.app.toggleDPad
 
 
 
@@ -246,7 +246,7 @@ fun AppNavGraph(
                     currentTab = tab
                 },
                 onCyclePadMode = {
-                    activePadMode = activePadMode.toggleNumberPad(defaultPadMode)
+                    activePadMode = activePadMode.toggleDPad(defaultPadMode)
                 },
                 onOpenDiscovery = {
                     navController.navigate(Screen.Discovery.route)
